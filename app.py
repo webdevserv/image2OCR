@@ -14,8 +14,7 @@ def local_css(file_name):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 st.set_page_config(
-   page_title="Streamlit iCodeIdoia - OCR an IMAGE - Extract text from an image",
-   page_icon="images/ilpicon1.png",layout="wide",initial_sidebar_state="expanded"
+   page_title="Streamlit iCodeIdoia - Image2OCR Extract text from an image"
 )
 
 st.image("images/banner.jpg")
@@ -25,7 +24,7 @@ local_css("styles/style.css")
 
 @st.cache_resource
 def load_model(): 
-    reader = ocr.Reader(['en'],model_storage_directory='.')
+    reader = ocr.Reader(['en'],model_storage_directory='.',gpu=False)
     return reader 
 
 reader = load_model() #load model
@@ -36,7 +35,7 @@ tab1, tab2 = st.tabs(["Demo","Application"])
 with tab1:   
    # Handle first image
    
-   url = "https://https://raw.githubusercontent.com/webdevserv/images_video/main/ocr_sample.jpg" 
+   url = "https://raw.githubusercontent.com/webdevserv/image2OCR/main/images/ocr.jpg"
 
    st.subheader("OCR an image demo")
    img_description = st.text('Image text will extracted using OCR.')
@@ -61,7 +60,7 @@ with tab1:
    
 with tab2:
   st.subheader("OCR an image app")
-  img_description = st.text('Image text will be extracted using OCR.')
+  img_description = st.text('Image text will be extracted using OCR. Warning: It might take an awful long time it is not GPU enabled.')
   uploaded_file = st.file_uploader("Upload a image to OCR.", type=['jpg'])
 
   if uploaded_file is not None: 
