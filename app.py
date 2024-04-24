@@ -36,7 +36,7 @@ tab1, tab2 = st.tabs(["Demo","Application"])
 with tab1:   
    # Handle first image
    
-   url = "https://https://raw.githubusercontent.com/webdevserv/images_video/main/ocr_sample.jpg" 
+   url = "https://https://raw.githubusercontent.com/webdevserv/image2OCR/images/ocr.jpg" 
 
    st.subheader("OCR an image demo")
    img_description = st.text('Image text will extracted using OCR.')
@@ -63,7 +63,7 @@ with tab1:
 with tab2:
   st.subheader("OCR an image app")
   img_description = st.text('Image text will be extracted using OCR.')
-  uploaded_file = st.file_uploader("Upload a image to OCR.", type=['jpg'])
+  uploaded_file = st.file_uploader("Upload a image to OCR.", type=['jpg','png','gif'])
 
   if uploaded_file is not None: 
    img = Image.open(uploaded_file)
