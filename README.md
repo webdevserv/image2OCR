@@ -9,5 +9,3 @@ app_file: app.py
 pinned: false
 license: apache-2.0
 ---
-
-Testing app in HF and streamlit and updated via workflows in Github actions.
