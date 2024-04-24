@@ -1,6 +1,7 @@
-streamlit
+streamlit==1.31.0
 opencv-python-headless
 numpy
 easyocr
 Pillow
 requests
+streamlit-extras
