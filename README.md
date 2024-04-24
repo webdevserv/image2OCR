@@ -10,4 +10,4 @@ pinned: false
 license: apache-2.0
 ---
 
-Teseting app in HF and streamlit and updated via workflows in Github actions.
+Testing app in HF and streamlit and updated via workflows in Github actions.
